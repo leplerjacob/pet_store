@@ -2,7 +2,8 @@ class PetsController < ApplicationController
 
     skip_before_action :verify_authenticity_token
 
-    def index 
+    def index
+        # p self
         puts "hit our index view"
         @pets = Pet.all
         render(:index)
@@ -22,7 +23,6 @@ class PetsController < ApplicationController
                    year_of_birth: params[:year_of_birth],
                    good_with_kids: params[:good_with_kids])
         redirect_to pet_path(pet.id)
-
     end
 
     def new

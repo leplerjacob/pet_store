@@ -1,6 +1,7 @@
 <h1>Pet Detail Page</h1>
 
-<div>Name: <%= @pet.name %></div>
+<div>Name: <%= @pet.name %> The <%= @pet.species%></div>
+<div>Age: <%= Time.now.to_s.split(" ")[0].split("-")[0].to_i - @pet.year_of_birth%></div>
 <div>Good With Kids? <%= @pet.good_with_kids %></div>
 
 <%= button_to "Toggle Good With Kids", toggle_path(@pet.id) %>
